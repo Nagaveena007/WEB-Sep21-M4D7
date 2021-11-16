@@ -13,7 +13,7 @@ const CommentArea = ({ asin }) => {
   useEffect(() => {
     // const [isLoading, setIsLoading] = useState(true);
     fetchComments();
-  });
+  }, [asin]);
 
   const fetchComments = async () => {
     try {
@@ -29,9 +29,9 @@ const CommentArea = ({ asin }) => {
       console.log(response);
       if (response.ok) {
         let comments = await response.json();
+        setcomments(comments);
         setIsError(true);
         setIsLoading(false);
-        setcomments(comments);
       } else {
         console.log("error");
         // this.setState({ isLoading: false, isError: true });

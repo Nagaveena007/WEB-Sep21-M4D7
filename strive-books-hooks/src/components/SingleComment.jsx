@@ -8,7 +8,7 @@ import { Button, ListGroup } from "react-bootstrap";
         method: "DELETE",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyODk0ZGFhY2FhMjAwMTU1MmExNjMiLCJpYXQiOjE2MzY2NDAwMzUsImV4cCI6MTYzNzg0OTYzNX0.VG86lV20CDVqvjC9I1KfBdP08Y5tWlGW5utDd-dm5cU",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyODk0ZGFhY2FhMjAwMTU1MmExNjMiLCJpYXQiOjE2MzcwODQ1ODgsImV4cCI6MTYzODI5NDE4OH0.wADxD7z72hDK1npR0_0FNibR0Y0M2YwZQbE0X4vYcpU",
         },
       }
     );
