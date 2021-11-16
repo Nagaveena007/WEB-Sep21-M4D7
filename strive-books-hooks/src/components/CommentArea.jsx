@@ -13,7 +13,7 @@ const CommentArea = ({ asin }) => {
   useEffect(() => {
     // const [isLoading, setIsLoading] = useState(true);
     fetchComments();
-  }, [asin]);
+  });
 
   const fetchComments = async () => {
     try {

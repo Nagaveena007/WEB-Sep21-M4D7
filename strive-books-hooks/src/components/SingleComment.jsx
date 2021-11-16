@@ -1,6 +1,6 @@
 import { Button, ListGroup } from "react-bootstrap";
-
-const deleteComment = async (asin) => {
+/* import { MdDelete } from "react-icons/md";
+ */ const deleteComment = async (asin) => {
   try {
     let response = await fetch(
       "https://striveschool-api.herokuapp.com/api/comments/" + asin,
@@ -30,7 +30,7 @@ const SingleComment = ({ comment }) => (
       className="ml-2"
       onClick={() => deleteComment(comment._id)}
     >
-      D
+      D {/* <MdDelete /> */}
     </Button>
   </ListGroup.Item>
 );
