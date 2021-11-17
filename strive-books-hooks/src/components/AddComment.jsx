@@ -1,26 +1,25 @@
 import { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 
-const AddComment=({asin})=>{
-    const [comment, setComment]=useState({
-        comment:'',
-        rate='1',
-        elementId:null
-    })
-   
-    useEffect(()=>{
-        setComment((c)=>({
-            ...c,
-            elementId:asin,
-        }))
-    },[asin])
+const AddComment = ({ asin }) => {
+  const [comment, setComment] = useState({
+    comment: "",
+    rate: 1,
+    elementId: null,
+  });
 
-  
+  useEffect(() => {
+    setComment((c) => ({
+      ...c,
+      elementId: asin,
+    }));
+  }, [asin]);
+
   const sendComment = async (e) => {
     e.preventDefault();
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments"+asin,
+        "https://striveschool-api.herokuapp.com/api/comments" + asin,
         {
           method: "POST",
           body: JSON.stringify(comment),
@@ -41,7 +40,7 @@ const AddComment=({asin})=>{
     } catch (error) {
       console.log("error");
     }
-  }
+  };
   return (
     <div>
       <Form onSubmit={sendComment}>
@@ -52,11 +51,9 @@ const AddComment=({asin})=>{
             placeholder="Add comment here"
             value={comment.comment}
             onChange={(e) =>
-                setComment({
-                comment: {
-                  ...comment,
-                  comment: e.target.value,
-                },
+              setComment({
+                ...comment,
+                comment: e.target.value,
               })
             }
           />
@@ -67,11 +64,9 @@ const AddComment=({asin})=>{
             as="select"
             value={comment.rate}
             onChange={(e) =>
-              setState({
-                comment: {
-                  ...comment,
-                  rate: e.target.value,
-                },
+              setComment({
+                ...comment,
+                rate: e.target.value,
               })
             }
           >
@@ -87,8 +82,7 @@ const AddComment=({asin})=>{
         </Button>
       </Form>
     </div>
-  )
-}
-
+  );
+};
 
 export default AddComment;
